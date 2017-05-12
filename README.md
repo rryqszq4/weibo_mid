@@ -5,7 +5,7 @@ test
 ----
 ```php
 <?php
-    require_once('weibo_mid');
+    require_once('weibo_mid.php');
     weibo_mid::test();
 ?>
 ```

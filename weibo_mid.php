@@ -1,4 +1,11 @@
 <?php
+/**
+ * Copyright (c) 2017 rryqszq4
+ *
+ *
+ * Convert to weibo mid(id) and base62 hash string for php.
+ *
+ */
 
 class weibo_mid {
 
