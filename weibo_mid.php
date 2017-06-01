@@ -23,12 +23,12 @@ class weibo_mid {
     }
 
     static private function encode62ToInt($str62) {
-    $i10 = 0;
-    for ($i = 0; $i < strlen($str62); $i++) {
-        $n = strlen($str62) - $i - 1;
-        $i10 += intval(strpos(self::$str62key, $str62{$i}) * pow(62, $n));
-    }
-    return $i10;
+        $i10 = 0;
+        for ($i = 0; $i < strlen($str62); $i++) {
+            $n = strlen($str62) - $i - 1;
+            $i10 += intval(strpos(self::$str62key, $str62{$i}) * pow(62, $n));
+        }
+        return $i10;
     }
 
     static public function id2mid($id) {
@@ -43,15 +43,15 @@ class weibo_mid {
     }
 
     static public function mid2id($str62) {
-    $id = "";
-    for ($i = strlen($str62) - 4; $i > -4; $i = $i -4) {
-        $offset = $i < 0 ? 0 : $i;
-        $len = $i < 0 ? (strlen($str62) % 4) : 4;
-        $str = self::encode62ToInt(substr($str62, $offset, $len));
-        if ($offset > 0) {$str = str_pad($str, 7, '0', STR_PAD_LEFT);}
-        $id = $str.$id;
-    }
-    return $id; 
+        $id = "";
+        for ($i = strlen($str62) - 4; $i > -4; $i = $i -4) {
+            $offset = $i < 0 ? 0 : $i;
+            $len = $i < 0 ? (strlen($str62) % 4) : 4;
+            $str = self::encode62ToInt(substr($str62, $offset, $len));
+            if ($offset > 0) {$str = str_pad($str, 7, '0', STR_PAD_LEFT);}
+            $id = $str.$id;
+        }
+        return $id; 
     }
 
     static public function test() {
